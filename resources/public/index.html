@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Example Application</title>
+    <!--
+         The stylesheet will need to be available on the classpath.
+         A good place for this file would be at resources/public/path/to/style.css.
+    -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <!--
+         Hardcoded Development Webpack Bundled JavaScript.
+         Place the ClojureScript script tag as the last tag in the body.
+         This is the convention for Google Closure compiled projects.
+         https://figwheel.org/docs/your_own_page.html
+    -->
+    <script type="text/javascript" src="cljs-out/dev/main_bundle.js"></script>
+  </body>
+</html>
+

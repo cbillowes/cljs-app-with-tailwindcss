@@ -1,0 +1,34 @@
+^{:auto-bundle :webpack ;; https://figwheel.org/docs/npm.html
+  :watch-dirs  ["src"]
+  :css-dirs    ["resources/public"]}
+
+{;; root namespace for the compiled artifact.
+ :main example-app.core
+
+ ;; :none does not produce a single self-contained compiled artifact,
+ ;; like with :whitespace, :simple or :advanced,
+ ;; but rather creates an artifact that loads all of the separately
+ ;; compiled namespaces.
+ :optimizations :none
+
+ ;; https://figwheel.org/docs/npm.html
+ ;; instruct compiler to produce the bundled JavaScript file.
+ :target :bundle
+
+ ;; bundles up main.js and pulls in npm dependencies.
+
+ ;;   :output-to is replaced with ./target/public/cljs-out/dev/main.js
+ ;;   it is the path to the JavaScript file that will be output
+ ;;   needs to point to a path that is basically the classpath + public.
+
+ ;;   :final-output-dir is replaced with ./target/public/cljs-out/dev
+ ;;   :final-output-filename is replaced with main_bundle.js
+ :bundle-cmd {:none ["npx" "webpack" "--mode=development"
+                     "--entry" :output-to
+                     "--output-path" :final-output-dir
+                     "--output-filename" :final-output-filename]
+
+              :default ["npx" "webpack" "--mode=production"
+                        "--entry" :output-to
+                        "--output-path" :final-output-dir
+                        "--output-filename" :final-output-filename]}}

@@ -1,0 +1,8 @@
+# npm dependencies
+node_modules
+
+# Cached classpath and the runtime basis files
+.cpcache
+
+# Output of the ClojureScript compiler
+target
