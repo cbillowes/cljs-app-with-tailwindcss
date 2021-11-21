@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "develop": "clj -M:dev"
+    "postcss:watch": "cross-env TAILWIND_MODE=watch postcss src/css/tailwind.css -o ./target/public/cljs-out/dev/style.css --verbose -w",
+    "figwheel:watch": "clj -M:dev",
+    "develop": "run-p -l *:watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
