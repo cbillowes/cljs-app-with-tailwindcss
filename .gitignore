@@ -6,3 +6,9 @@ node_modules
 
 # Output of the ClojureScript compiler
 target
+
+# https://clojure-lsp.io/settings/
+.lsp
+
+# https://github.com/clj-kondo/clj-kondo
+.clj-kondo
